@@ -5,6 +5,8 @@ const {
   deleteSingleProcessService,
 } = require("../service/process.service");
 
+
+//  Create process controller 
 exports.createProcess = async (req, res, next) => {
   try {
     const result = await createProcessService();
@@ -16,11 +18,13 @@ exports.createProcess = async (req, res, next) => {
   } catch (error) {
     res.status(400).json({
       status: "Failed",
-      error: "Couldn't create the brand",
+      error: "Couldn't create the process",
     });
   }
 };
 
+
+//Get all process controller
 exports.getAll = async (req, res, next) => {
   try {
     const result = await getAllProcessService();
@@ -32,11 +36,13 @@ exports.getAll = async (req, res, next) => {
   } catch (error) {
     res.status(400).json({
       status: "Failed",
-      error: "Couldn't create the brand",
+      error: "Couldn't create the process",
     });
   }
 };
 
+
+//Get single process controller
 exports.getSingle = async (req, res, next) => {
   try {
     const { pid } = req.params;
@@ -49,11 +55,13 @@ exports.getSingle = async (req, res, next) => {
   } catch (error) {
     res.status(400).json({
       status: "Failed",
-      error: "Couldn't create the brand",
+      error: "Couldn't create the process",
     });
   }
 };
 
+
+// Delete Single process controller
 exports.deleteProcess = async (req, res, next) => {
   try {
     const { pid } = req.params;
@@ -66,7 +74,7 @@ exports.deleteProcess = async (req, res, next) => {
   } catch (error) {
     res.status(400).json({
       status: "Failed",
-      error: "Couldn't create the brand",
+      error: "Couldn't create the service",
     });
   }
 };
